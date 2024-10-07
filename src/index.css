@@ -1,68 +1,138 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+@font-face {
+  font-family: "Graphik Trial";
+  font-style: normal;
+  font-weight: 100;
+  src: url(./assets/fonts/Graphik-Thin-Trial.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Graphik Trial";
+  font-style: normal;
+  font-weight: 200;
+  src: url(./assets/fonts/Graphik-Extralight-Trial.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Graphik Trial";
+  font-style: normal;
+  font-weight: 300;
+  src: url(./assets/fonts/Graphik-Light-Trial.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Graphik Trial";
+  font-style: normal;
   font-weight: 400;
+  src: url(./assets/fonts/Graphik-Regular-Trial.otf) format("opentype");
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@font-face {
+  font-family: "Graphik Trial";
+  font-style: normal;
+  font-weight: 500;
+  src: url(./assets/fonts/Graphik-Medium-Trial.otf) format("opentype");
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+@font-face {
+  font-family: "Graphik Trial";
+  font-style: normal;
+  font-weight: 600;
+  src: url(./assets/fonts/Graphik-Semibold-Trial.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Graphik Trial";
+  font-style: normal;
+  font-weight: 700;
+  src: url(./assets/fonts/Graphik-Bold-Trial.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Graphik Trial";
+  font-style: normal;
+  font-weight: 800;
+  src: url(./assets/fonts/Graphik-Black-Trial.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Graphik Trial";
+  font-style: normal;
+  font-weight: 900;
+  src: url(./assets/fonts/Graphik-Super-Trial.otf) format("opentype");
+}
+
+:root {
+  --bg: #222222;
+  --wash1: #4e4e4e;
+  --wash2: #383838;
+  --grey1: #eee;
+  --grey2: #bbb;
+  --grey3: #888;
+  --primaryBorderColor: #333;
+  --secondaryBorderColor: #333;
+  --transparentBorder: hsla(0, 0%, 100%, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+html,
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg);
+  color: var(--grey2);
+  font-family: "Graphik Trial";
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--grey1);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--grey2);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+p.primary {
+  color: var(--grey1);
+}
+
+p.secondary {
+  color: var(--grey3);
+}
+
+a {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-decoration: none;
+  color: var(--grey1);
+}
+
+.callout {
+  width: max-content;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  border-radius: 12px;
+  background-color: var(--wash2);
+  white-space: nowrap;
+}
+
+.callout a {
+  font-size: 12px;
+  padding: 0 10px;
+  color: var(--grey2);
 }
