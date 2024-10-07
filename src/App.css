@@ -1,0 +1,22 @@
+.bio {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.profile-picture {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: var(--wash1);
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .bio {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
