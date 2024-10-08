@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 import ProfilePicture from "./assets/photos/profile-picture.jpg";
 
+import { ReactLenis } from "@studio-freight/react-lenis";
+
 const sections = [
   {
     title: "Lab",
@@ -72,58 +74,60 @@ const LinkIcon = () => (
 
 function App() {
   return (
-    <div className="app">
-      <div className="container">
-        <div className="bio">
-          <div className="profile-picture">
-            <img src={ProfilePicture} alt="Profile picture" />
-          </div>
-          <div className="bio-copy">
-            <h1>Harnish Mistry</h1>
-            <p>Web Developer based in Toronto, ON</p>
-            <div className="callout">
-              <a
-                href="https://www.linkedin.com/in/harrnish/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                linkedin.com/in/harrnish
-              </a>
+    <ReactLenis root>
+      <div className="app">
+        <div className="container">
+          <div className="bio">
+            <div className="profile-picture">
+              <img src={ProfilePicture} alt="Profile picture" />
+            </div>
+            <div className="bio-copy">
+              <h1>Harnish Mistry</h1>
+              <p>Web Developer based in Toronto, ON</p>
+              <div className="callout">
+                <a
+                  href="https://www.linkedin.com/in/harrnish/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  linkedin.com/in/harrnish
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-        {sections.map((section) => (
-          <section
-            key={section.title.toLowerCase()}
-            className={section.title.toLowerCase()}
-          >
-            <div className="section-title">
-              <p className="primary">{section.title}</p>
-            </div>
-            {section.items.map((item) => (
-              <div key={item.label} className="section-content">
-                <div className="col">
-                  <p className="secondary">{item.label}</p>
-                </div>
-                <div className="col">
-                  <div className="link">
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.sublabel}
-                    </a>
-                    <LinkIcon />
+          {sections.map((section) => (
+            <section
+              key={section.title.toLowerCase()}
+              className={section.title.toLowerCase()}
+            >
+              <div className="section-title">
+                <p className="primary">{section.title}</p>
+              </div>
+              {section.items.map((item) => (
+                <div key={item.label} className="section-content">
+                  <div className="col">
+                    <p className="secondary">{item.label}</p>
+                  </div>
+                  <div className="col">
+                    <div className="link">
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {item.sublabel}
+                      </a>
+                      <LinkIcon />
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </section>
-        ))}
+              ))}
+            </section>
+          ))}
+        </div>
       </div>
-    </div>
+    </ReactLenis>
   );
 }
 
